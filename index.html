@@ -49,9 +49,8 @@
 
 <div class="jumbotron">
   <div class="container text-center">
-    <h1 style="color:white;margin-bottom:0;">Composable-Diffusion</h1>
-    <h3 style="color:white;margin-top:0;">Compositional Visual Generation with Composable Diffusion Models</h3>
-    <h3 style="color:white;margin-top:0;">ECCV 2022</h3>
+    <h1 style="color:white;margin-bottom:0;">Reconstructing the Mind's Eye:</h1>
+    <h3 style="color:white;margin-top:0;">fMRI-to-Image with Contrastive Learning and Diffusion Priors</h3>
     <br>
     <p style="color:white"><a href="https://nanliu.io/">Nan Liu</a><sup>1*</sup>, <a href="https://people.csail.mit.edu/lishuang/">Shuang Li</a><sup>2*</sup>,
       <a href="https://yilundu.github.io">Yilun Du</a><sup>2*</sup>, <a href="https://groups.csail.mit.edu/vision/torralbalab/">Antonio Torralba</a><sup>2</sup>,
@@ -65,22 +64,12 @@
   
 <div class="container bg-3">    
   <div class="row text-center">
-
-    <!-- <div class="col-sm-2 col-sm-offset-1">
-      <a href="https://www.youtube.com/watch?v=_zN-wVwPH1s"><img height="78" width="120" src="./NeRF-Supervision_files/video-thumb.png" data-nothumb="" style="border: 1px solid;"><br>Overview<br>Video<br></a>
-    </div> -->
     
     <div class="col-sm-2 col-sm-offset-1">
-      <a href="https://arxiv.org/abs/2206.01714"><img height="100" width="78" src="website_files/imgs/paper_page.png" data-nothumb="" style="border: 1px solid"><br>ECCV 2022<br>Paper<br></a>
+      <a href="https://arxiv.org/abs/2206.01714"><img height="100" width="78" src="website_files/imgs/paper_page.png" data-nothumb="" style="border: 1px solid"><br>arXiv<br>Preprint<br></a>
     </div>
     <div class="col-sm-2">
-      <a href="https://github.com/energy-based-model/Compositional-Visual-Generation-with-Composable-Diffusion-Models-PyTorch"><img height="100" width="78" src="website_files/imgs/source_code.png" data-nothumb="" style="border: 1px solid"><br>Source Code<br>Github</a>
-    </div>
-    <div class="col-sm-2">
-      <a href="https://colab.research.google.com/github/energy-based-model/Compositional-Visual-Generation-with-Composable-Diffusion-Models-PyTorch/blob/main/notebooks/demo.ipynb"><img height="78" width="120" src="website_files/imgs/colab.png" data-nothumb="" style="border: 1px solid"><br>Colab Demo:<br>Composable Diffusion Models</a>
-    </div>
-    <div class="col-sm-2">
-      <a href="https://huggingface.co/spaces/Shuang59/Composable-Diffusion"><img height="78" width="78" src="website_files/imgs/huggingface.png" data-nothumb="" style="border: 1px solid"><br>Hugging Face<br>Demo</a>
+      <a href="https://github.com/MedARC-AI/fMRI-reconstruction-NSD"><img height="100" width="78" src="website_files/imgs/source_code.png" data-nothumb="" style="border: 1px solid"><br>Source Code<br>Github</a>
     </div>
     <div class="col-sm-2">
       <a href="#results"><img height="100" width="130" src="website_files/imgs/website_teaser.png" data-nothumb="" style="border: 1px solid"><br>Results</a>
@@ -89,196 +78,28 @@
   </div>
 </div><br>
 
-<div class="container bg-3">
-    <hr>
-    <div class="row">
-        <h2 class="text-center">Stable Diffusion Demos - <span class="and">AND</span> + <span class="not">NOT</span> (negative prompts) </h2>
-        <br />
-        <p>
-            <b>Compositional Generation using Stable Diffusion.</b> Our proposed Conjunction (<span class="and">AND</span>) and Negation (<span class="not">NOT</span>)
-            can be applied to conditional diffusion models for compositional generation. Our operators are added into <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui">Stable Diffusion WebUI</a>!
-            Corresponding pages are as follows: <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/commit/c26732fbee2a57e621ac22bf70decf7496daa4cd">Conjunction (<span class="and">AND</span>) </a>  and
-            <a href="https://github.com/AUTOMATIC1111/stable-diffusion-webui/wiki/Negative-prompt">Negation (<span class="not">NOT</span>)</a>.
-        </p>
-        <hr>
-        <div class="col-sm-3 text-center">
-            <img src="website_files/imgs/videos/example2_A.gif" class="stable_video" alt="">
-            <p>"mystical trees" <span class="and">AND</span> "A magical pond" <span class="and">AND</span> "Dark"</p>
-        </div>
-        <div class="col-sm-3 text-center">
-            <img src="website_files/imgs/videos/example2_N.gif" class="stable_video" alt="">
-            <p>"mystical trees" <span class="and">AND</span> "A magical pond" <span class="and">AND</span> <span class="not">NOT</span> "Dark"</p>
-        </div>
-        <div class="col-sm-3 text-center">
-            <img src="website_files/imgs/videos/example1_A.gif" class="stable_video" alt="">
-            <p>"A stone castle surrounded by lakes and trees, fantasy, wallpaper, concept art, extremely detailed" <span class="and">AND</span> "Black and white"</p>
-        </div>
-        <div class="col-sm-3 text-center">
-            <img src="website_files/imgs/videos/example1_N.gif" class="stable_video" alt="">
-            <p>"A stone castle surrounded by lakes and trees, fantasy, wallpaper, concept art <span class="and">AND</span> extremely detailed" <span class="and">AND</span> <span class="not">NOT</span> "Black and white"</p>
-        </div>
-    </div>
-</div>
-<br />
-<div class="container bg-3">
-    <hr>
-    <h2 class="text-center">Point-E Demos - <span class="and">AND</span> + <span class="not">NOT</span> (negative prompts) </h2>
-        <br />
-        <p>
-            <b>Compositional 3D Generation using <a href="https://arxiv.org/abs/2212.08751">Point-E</a></b> using our proposed Conjunction (<span class="and">AND</span>) and and Negation (<span class="not">NOT</span>) operators.
-        </p>
-    <div class="row">
-        <div class="col-sm-4 text-center">
-            <img src="website_files/imgs/videos/a%20green%20avocado_a%20chair.gif" class="stable_video" alt="">
-            <p>"A green avocado" <span class="and">AND</span> "A chair"
-        </div>
-        <div class="col-sm-4 text-center">
-            <img src="website_files/imgs/videos/a%20chair_and_not%20chair_legs.gif" class="stable_video" alt="">
-            <p>"A chair" <span class="and">AND</span> <span class="not">NOT</span> "Chair legs"
-        </div>
-        <div class="col-sm-4 text-center">
-            <img src="website_files/imgs/videos/a%20toilet_a%20chair.gif" class="stable_video" alt="">
-            <p>"A toilet" <span class="and">AND</span> "A chair"
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-4 text-center">
-            <img src="website_files/imgs/videos/a%20couch_a%20boat.gif" class="stable_video" alt="">
-            <p>"A couch" <span class="and">AND</span> "A boat"
-        </div>
-        <div class="col-sm-4 text-center">
-            <img src="website_files/imgs/videos/a%20monitor_a%20brown%20couch.gif" class="stable_video" alt="">
-            <p>"A monitor" <span class="and">AND</span> "A brown couch"
-        </div>
-        <div class="col-sm-4 text-center">
-            <img src="website_files/imgs/videos/a%20chair_a%20cake.gif" class="stable_video" alt="">
-            <p>"A chair" <span class="and">AND</span> "A cake"
-        </div>
-    </div>
-</div>
-<br />
-
 
 <div class="container bg-3">
   <div class="row">
-    <h2 class="text-center">Video Demos</h2>
+    <h2 class="text-center">Abstract</h2>
     <hr>
-    <div class="col-sm-6 text-center">
-      <p><b>Compose natural language descriptions:</b></p>
-      <video autoplay="" muted="" playsinline="" class="img-responsive">
-        <source src="website_files/imgs/teaser_glide_1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="col-sm-6 text-center">
-      <p><b>Compose natural language descriptions:</b></p>
-      <video autoplay="" muted="" playsinline="" class="img-responsive">
-        <source src="website_files/imgs/teaser_glide.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-      </video>
+    <p> We present MindEye, a novel fMRI-to-image approach to retrieve and reconstruct viewed images from brain activity. Our model comprises two parallel submodules that are specialized for retrieval (using contrastive learning) and reconstruction (using a diffusion prior). MindEye can map fMRI brain activity to any high dimensional multimodal latent space, like CLIP image space, enabling image reconstruction using generative models that accept embeddings from this latent space. We comprehensively compare our approach with other existing methods, using both qualitative side-by-side comparisons and quantitative evaluations, and show that MindEye achieves state-of-the-art performance in both reconstruction and retrieval tasks. In particular, MindEye can retrieve the exact original image even among highly similar candidates indicating that its brain embeddings retain fine-grained image-specific information. This allows us to accurately retrieve images even from large-scale databases like LAION-5B. We demonstrate through ablations that MindEye's performance improvements over previous methods result from specialized submodules for retrieval and reconstruction, improved training techniques, and training models with orders of magnitude more parameters. Furthermore, we show that MindEye can better preserve low-level image features in the reconstructions by using img2img, with outputs from a separate autoencoder. </p>
+    <div class="col-sm-12 text-center">
+      <img src="https://raw.githubusercontent.com/MedARC-AI/fMRI-reconstruction-NSD/streamline/docs/pipeline.png" style="width:800px"></img>
     </div>
   </div>
-  <br>
-
-  <div class="row">
-    <div class="col-sm-6 text-center">
-      <p><b>Compose objects:</b></p>
-      <video autoplay="" muted="" playsinline="" class="img-responsive">
-        <source src="website_files/imgs/clevr_pos_teaser.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-      </video>
-    </div>
-    <div class="col-sm-6 text-center">
-      <p><b>Compose object relational descriptions:</b></p>
-      <video autoplay="" muted="" playsinline="" class="img-responsive">
-        <source src="website_files/imgs/clevr_rel_teaser.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-      </video>
-    </div>
-    </div><br>
-</div>
+</div><br>
 
 <br><br>
 
-<div class="container">
-    <h2 id="interactive_demo_stable_diffusion" class="text-center">Interactive Demos (Stable Diffusion)</h2>
-    <hr>
-    <div class="row">
-        <div class="col-sm-12 text-center">
-            <div class="section">
-                <div class="section" style="text-align: center">
-                    <span><strong>Text Prompt: </strong></span>
-                    <label for="composed_stable_diffusion">
-                        <select id='composed_stable_diffusion' class="dropselect" style="text-align: center" name="composed_stale_diffusion_generation" onchange="setImageStable(this);">
-                            <option value="website_files/imgs/stable_4.png" selected="">A cloudy blue sky AND A mountain in the horizon AND Cherry Blossoms around the mountain</option>
-                            <option value="website_files/imgs/stable_1.png">A horse AND a yellow flower field</option>
-                            <option value="website_files/imgs/stable_2.png">A train on a bridge AND a river under the bridge</option>
-                            <option value="website_files/imgs/stable_3.png">A river leading into mountains AND red trees on the side</option>
-                            <option value="website_files/imgs/stable_5.png">A house on a hill AND clouds in the background</option>
-                            <option value="website_files/imgs/stable_6.png">A red house next to a pond AND yellow trees next to the pond</option>
-                            <option value="website_files/imgs/stable_7.png">A church on a hill AND a river next to the church</option>
-                        </select>
-                    </label>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col justify-content-center text-center">
-                        <img src="website_files/imgs/stable_4.png"
-                             class="img-fluid" alt="" style="width:100%; height:100%" name="image-swap-2">
-                    </div>
-                </div>
-            </div>
-        </div>
 
-    </div>
-</div><br>
-
-<div class="container">
-    <h2 id="interactive_demo_glide" class="text-center">Interactive Demos (GLIDE)</h2>
-    <hr>
-    <div class="row">
-        <div class="col-sm-12 text-center">
-            <div class="section">
-                <div class="section" style="text-align: center">
-                    <span><strong>Text Prompt: </strong></span>
-                    <label for="composed_glide">
-                        <select id='composed_glide' class="dropselect" style="text-align: center" name="composed_glide_generation" onchange="setImageGLIDE(this);">
-                            <option value="website_files/imgs/1.png" selected="">A horse AND a yellow flower field</option>
-                            <option value="website_files/imgs/2.png">A train on a bridge AND a river under the bridge</option>
-                            <option value="website_files/imgs/3.png">A river leading into mountains AND red trees on the side</option>
-                            <option value="website_files/imgs/4.png">A cloudy blue sky AND A mountain in the horizon AND Cherry Blossoms in front of the mountain</option>
-                            <option value="website_files/imgs/5.png">A house on a hill AND clouds in the background</option>
-                            <option value="website_files/imgs/6.png">A red house next to a pond AND green trees next to the pond</option>
-                            <option value="website_files/imgs/7.png">A church on a hill AND a road in front of a hill</option>
-                            <option value="website_files/imgs/8.png">A tree on a hill AND a wheat field in front of a hill</option>
-                        </select>
-                    </label>
-                </div>
-                <div class="row align-items-center">
-                    <div class="col justify-content-center text-center">
-                        <img src="website_files/imgs/1.png"
-                             class="img-fluid" alt="" style="width:100%; height:100%" name="image-swap-1">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-</div><br>
 
 <div class="container bg-3">
   <div class="row">
-    <h2 class="text-center">Method</h2>
+    <h2 class="text-center">Methods</h2>
     <hr>
-    <p><b>Compositional generation.</b> Our method can compose multiple diffusion models during inference and generate images containing all the concepts described in the inputs without further training. We first send an image from iteration \(t\) and each individual concept \(c_i\) to the diffusion model to generate a set of scores \(\{\epsilon_\theta(\mathbf{x}_t, t|c_1), \ldots, \epsilon_\theta(\mathbf{x}_t, t|c_n)\}\). We then compose different concepts using the proposed compositional operators, such as conjunction, to denoise the generated images. The final image is obtained after \(T\) iterations.</p>
-    <div class="col-sm-12 text-center">
-      <!-- <img src="website_files/imgs/models-medium.gif" alt="Computer man" style="width:1250px;height:250px;border:0.5px solid gray"> -->
-      <!-- <img src="website_files/imgs/models-medium.gif" alt="Computer man" style="width:1200px;height:250px;"> -->
-      <!-- <img src="website_files/imgs/models-medium.gif" alt="Computer man" style="width:100%;"> -->
-      <video autoplay="" muted="" playsinline="" class="img-responsive" controls="">
-        <source src="website_files/imgs/models-medium.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-      </video>
-    </div>
+    <p><b>High-Level (Semantic) Pipeline </b> Contrastive learning and diffusion prior stuff</p>
+    <p><b>Low-Level (Perceptual) Pipeline </b> The low-level pipeline maps voxels to the embedding space of Stable Diffusion’s VAE. The output of this pipeline can be fed to the VAE decoder to produce blurry image reconstructions that lack high-level semantic content but perform well on low-level image metrics. We use [img2img](https://arxiv.org/abs/2108.01073) to improve our final image reconstructions in terms of low-level metrics, with minimal impairment to high-level metrics, such that we start the diffusion process from the noised encodings of our blurr reconstructions rather than pure noise.</p>  
   </div>
 </div><br>
 
@@ -288,190 +109,32 @@
 
   <div class="container bg-3">
   <div class="row">
-    <h2 class="text-center" id="results">More Results</h2>
+    <h2 class="text-center" id="results">Results</h2>
     <hr>
      <p>
-       <b>Composing Language Descriptions.</b> We develop Composed GLIDE (Ours), a version of GLIDE
-          that utilizes our compositional operators to combine textual descriptions, without further training. We compare it
-          to the original GLIDE, which directly encodes the descriptions as a single long sentence. Our approach more
-          accurately captures text details, such as the "overwater bungalows" in the third example.
+       <b>Image/Brain Retrieval</b> Blah blah blah.
      </p>
     <div class="col-sm-12 text-center">
-      <img src="website_files/imgs/glide.png" class="img-fluid" alt="glide" style="width:88%">
+      <!-- <img src="website_files/imgs/glide.png" class="img-fluid" alt="glide" style="width:88%"> -->
     </div>
   </div>
 
     <div class="row">
       <hr>
       <p>
-       <b>Composing Objects.</b> Our method can compose multiple objects while baselines either miss or generate more objects.
+       <b>fMRI-to-Image Reconstruction</b> Blah blah blah.
       </p>
       <div class="col-sm-12 text-center">
-        <img src="website_files/imgs/clevr_object.png" class="img-fluid" alt="clevr_objects" style="width:100%; height:100%">
+        <!-- <img src="website_files/imgs/clevr_object.png" class="img-fluid" alt="clevr_objects" style="width:100%; height:100%"> -->
       </div>
     </div>
-
-    <div class="row">
-      <hr>
-      <p>
-       <b>Composing Visual Relations.</b> Image generation results on the relational CLEVR dataset.
-      Our model is trained to generate images conditioned on a single object relation, but during inference, our model can compose multiple object relations.
-      The baseline methods either miss objects or generate more object relations.
-      </p>
-      <div class="col-sm-12 text-center">
-        <img src="website_files/imgs/clevr_rel.png" class="img-fluid" alt="clevr_relations" style="width:80%; height:100%">
-      </div>
-    </div>
-
-  <div class="row">
-      <hr>
-      <p>
-        <b>Composing Facial Attributes.</b> Image generation results on the FFHQ dataset.
-        Our model is trained to generate images conditioned on a single human facial attribute, but during inference,
-         our model can recursively compose multiple facial attributes using the proposed compositional operators.
-         The baselines either fail to compose attributes (StyleGAN2 and LACE) or generate low-quality images (EBM).
-      </p>
-      <div class="col-sm-12 text-center">
-        <img src="website_files/imgs/ffhq.png" class="img-fluid" alt="ffhq" style="width:80%">
-      </div>
-    </div>
-</div><br>
-
-
-<div class="container bg-3">
-  <div class="row">
-    <h2 class="text-center">Result Analysis</h2>
-    <hr>
-     <p>
-       <b>Success Examples.</b> In each example, the first two images are generated conditioned on each individual sentence description and the last image is generated by composing the sentences.
-     </p>
-    <div class="col-sm-6 text-center">
-      <img src="website_files/imgs/success_cases.png" class="img-fluid" alt="failures" style="width:100%">
-    </div>
-    <div class="col-sm-6 text-center">
-      <img src="website_files/imgs/success_cases2.png" class="img-fluid" alt="failures" style="width:100%">
-    </div>
-  </div>
-
-  <div class="row">
-    <hr>
-    <p>
-       <b>Failure Examples</b>. There are three main types of failures:<br>
-       (1) The pre-trained diffusion model does not understand certain concepts, such as "person".<br>
-       (2) The pre-trained duffision model confuses objects' attributes.<br>
-       (3) The composition fails. This usually happens when the objects are in the center of the images.
-     </p>
-     <br>
-     <div class="col-sm-6 text-center">
-      <img src="website_files/imgs/failure1.png" class="img-fluid" alt="failures" style="width:90%">
-    </div>
-    <div class="col-sm-6 text-center">
-      <img src="website_files/imgs/failure2.png" class="img-fluid" alt="failures" style="width:90%">
-    </div>
-    <br>
-    <div class="col-sm-12 text-center">
-      <img src="website_files/imgs/failure3.png" class="img-fluid" alt="failures" style="width:95%">
-    </div>
-  </div>
-  <div class="row">
-    <hr>
-    <p>
-       <b>Interesting Examples</b>. Our method, which combines multiple textual descriptions, can generate different styles of images compared to GLIDE, which directly encodes the descriptions as a single long sentence. Prompted with 'a dog' and 'the sky', our method generates a dog-shaped cloud, whereas GLIDE generates a dog under the sky from the prompt 'a dog and the sky'.
-     </p>
-     <br>
-     <div class="col-sm-6 text-center">
-      <img src="website_files/imgs/interesting_cases.png" class="img-fluid" alt="failures" style="width:70%">
-    </div>
-
-    <div class="col-sm-6 text-center">
-      <img src="website_files/imgs/interesting_cases2.png" class="img-fluid" alt="failures" style="width:70%">
-    </div>
-  </div>
-</div><br>
-
-<!--  related work-->
-      <div class="container bg-3" id="Related">
-        <h2 class="text-center">Related Projects</h2>
-          <hr>
-
-          Check out a full list of our papers on energy-based models at this <a href="https://energy-based-model.github.io/Energy-based-Model-MIT/">link</a>!
-          <br>
-          <br>
-            
-
-            <div class="row vspace-top">
-              <div class="col-sm-3">
-                <video width="100%" playsinline="" autoplay="" preload="" muted="">
-                    <source src="website_files/imgs/clevr_teaser.mp4" type="video/mp4">
-                </video>
-              </div>
-
-              <div class="col-sm-9">
-                  <div class="paper-title">
-                      <a href="https://composevisualrelations.github.io/">Learning to Compose Visual Relations</a>
-                  </div>
-                  <div>
-                     We propose to represent each relation as an unnormalized density (an energy-based model),
-                      enabling us to compose separate relations in a factorized manner.
-                      We show that such a factorized decomposition allows the model to both generate and edit scenes that have multiple sets of relations more faithfully.
-                      We further show that decomposition enables our model to effectively understand the underlying relational scene structure.
-                  </div>
-              </div>
-          </div>
-          <br>
-
-        
-          <div class="row vspace-top">
-                <div class="col-sm-3">
-                    <img src="website_files/imgs/comet_teaser.gif" class="img-fluid" alt="comet" style="width:100%">
-                </div>
-
-                <div class="col-sm-9">
-                    <div class="paper-title">
-                        <a href="https://energy-based-model.github.io/comet/">Unsupervised Learning of Compositional Energy Concepts</a>
-                    </div>
-                    <div>
-                       We show COMET provides a unified framework enabling us to decompose images into both global factors
-                        of variation as well as local factors of variation. Second, we show that COMET enables us to
-                        scale to more realistic datasets than previous work. Finally, we show that components obtained by
-                        COMET generalize well, and are amenable to compositions across different modes of data, and with
-                        components discovered by other instances of COMET.
-                    </div>
-                </div>
-          </div>
-          
-          
-
-          <br>
-          <div class="row vspace-top">
-            <div class="col-sm-3">
-                <img src="website_files/imgs/comp_cartoon.png" class="img-fluid" alt="ffhq" style="width:100%">
-            </div>
-
-            <div class="col-sm-9">
-                <div class="paper-title">
-                    <a href="https://energy-based-model.github.io/compositional-generation-inference/">Compositional Visual Generation with Energy Based Models</a>
-                </div>
-                <div>
-                    We show how EBMs enable <b>zero-shot compositional</b> visual generation, enabling us to compose visual concepts
-                    (through operators of conjunction, disjunction, or negation) together in a zero-shot manner.
-                    Our approach enables us to generate faces given a  description
-                    ((Smiling AND Female) OR (NOT Smiling AND Male)) or to combine several different objects together.
-                </div>
-            </div>
-        </div>
-
-    </div>
-    <br>
-
 
     <div class="container bg-3">
       <div class="row">
-        <h2 class="text-center">Acknowledgement</h2>
+        <h2 class="text-center">Acknowledgements</h2>
         <hr>
-        <p>Thanks <a href="https://baulab.info/">David Bau</a> for proofreading the paper and providing suggestions,
-            and <a href="https://scholar.google.com/citations?user=5fU-QMwAAAAJ&hl=en">Mark Chen</a> for running DALLE-2 examples for our paper.
-            This webpage template was recycled from <a href="https://yenchenlin.me/nerf-supervision/">here</a>. </p>
+        <p>Thanks to Jeremy Howard for reviewing the manuscript and providing feedback. Thanks to Stability AI for providing the computational resources needed for this research.
+            This webpage template was recycled from <a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/">here</a>. </p>
       </div>
     </div><br><br>
 

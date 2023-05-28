@@ -47,19 +47,19 @@
 </head>
 <body>
 
-<div class=“jumbotron”> 
-  <div class=“container text-center”> 
-    <h1 style=“color:white;margin-bottom:0;”>Reconstructing the Mind’s Eye:</h1> 
-    <h3 style=“color:white;margin-top:0;”>fMRI-to-Image with Contrastive Learning and Diffusion Priors</h3> 
+<div class="jumbotron"> 
+  <div class="container text-center"> 
+    <h1 style="color:white;margin-bottom:0;">Reconstructing the Mind’s Eye:</h1> 
+    <h3 style="color:white;margin-top:0;">fMRI-to-Image with Contrastive Learning and Diffusion Priors</h3> 
     <br> 
-    <p style=“color:white”><a href=“https://www.paulscotti.com”>Paul S. Scotti</a><sup>1*,2*</sup>, <a href=“https://atmadeep.bss.design”>Atmadeep Banerjee</a><sup>2*</sup>, 
+    <p style="color:white"><a href="https://www.paulscotti.com">Paul S. Scotti</a><sup>1*,2*</sup>, <a href="https://atmadeep.bss.design">Atmadeep Banerjee</a><sup>2*</sup>, 
       Jimmie Goode<sup>†2</sup>, Stepan Shabalin<sup>2</sup>, Alex Nguyen<sup>1</sup>, Ethan Cohen<sup>3</sup>, Aidan J. Dempster<sup>4</sup>, Nathalie Verlinde<sup>1</sup>, 
-      Elad Yundler<sup>5</sup>, David Weisberg<sup>1,2</sup>, <a href=“https://pni.princeton.edu/faculty/kenneth-norman”>Kenneth A. Norman</a><sup>§1</sup>, 
-      and <a href=“https://tanishq.ai”>Tanishq M. Abraham</a><sup>§2,6,7</sup> 
-      <br><sup>1</sup><a href=“https://pni.princeton.edu”>Princeton Neuroscience Institute</a>, <sup>2</sup><a href=“https://medarc.ai”>Medical AI Research Center (MedARC)</a>, 
+      Elad Yundler<sup>5</sup>, David Weisberg<sup>1,2</sup>, <a href="https://pni.princeton.edu/faculty/kenneth-norman">Kenneth A. Norman</a><sup>§1</sup>, 
+      and <a href="https://tanishq.ai">Tanishq M. Abraham</a><sup>§2,6,7</sup> 
+      <br><sup>1</sup><a href="https://pni.princeton.edu">Princeton Neuroscience Institute</a>, <sup>2</sup><a href="https://medarc.ai">Medical AI Research Center (MedARC)</a>, 
       <sup>3</sup>Ecole Normale Supérieure, PSL University, <sup>4</sup>University of Toronto, <sup>5</sup>Hebrew University of Jerusalem, 
-      <sup>6</sup><a href=“https://eleuther.ai”>EleutherAI</a>, <sup>7</sup><a href=“https://stability.ai”>Stability AI</a> 
-      <br> <a>(* indicate equal contribution)</a> 
+      <sup>6</sup><a href="https://eleuther.ai">EleutherAI</a>, <sup>7</sup><a href="https://stability.ai">Stability AI</a> 
+      <br> (* indicate equal contribution)
       <br> 
   </div> 
 </div>
@@ -68,7 +68,7 @@
   <div class="row text-center">
     <div class="col-sm-2 col-sm-offset-1"></div>
     <div class="col-sm-2 col-sm-offset-1">
-      <a href="https://arxiv.org/abs/2206.01714"><img height="100" width="78" src="website_files/imgs/paper_page.png" data-nothumb="" style="border: 1px solid"><br>arXiv<br>Preprint<br></a>
+      <a href="#"><img height="100" width="78" src="website_files/imgs/paper_page.png" data-nothumb="" style="border: 1px solid"><br>arXiv<br>Preprint<br></a>
     </div>
     <div class="col-sm-2">
       <a href="https://github.com/MedARC-AI/fMRI-reconstruction-NSD"><img height="100" width="78" src="website_files/imgs/source_code.png" data-nothumb="" style="border: 1px solid"><br>Source Code<br>Github</a>
@@ -86,7 +86,9 @@
     <h2 class="text-center">Abstract</h2>
     <hr>
     <p> We present MindEye, a novel fMRI-to-image approach to retrieve and reconstruct viewed images from brain activity. Our model comprises two parallel submodules that are specialized for retrieval (using contrastive learning) and reconstruction (using a diffusion prior). MindEye can map fMRI brain activity to any high dimensional multimodal latent space, like CLIP image space, enabling image reconstruction using generative models that accept embeddings from this latent space. We comprehensively compare our approach with other existing methods, using both qualitative side-by-side comparisons and quantitative evaluations, and show that MindEye achieves state-of-the-art performance in both reconstruction and retrieval tasks. In particular, MindEye can retrieve the exact original image even among highly similar candidates indicating that its brain embeddings retain fine-grained image-specific information. This allows us to accurately retrieve images even from large-scale databases like LAION-5B. We demonstrate through ablations that MindEye's performance improvements over previous methods result from specialized submodules for retrieval and reconstruction, improved training techniques, and training models with orders of magnitude more parameters. Furthermore, we show that MindEye can better preserve low-level image features in the reconstructions by using img2img, with outputs from a separate autoencoder. </p>
-    <img src="https://github.com/MedARC-AI/fMRI-reconstruction-NSD/blob/main/docs/recon_grid.png?raw=true" style="width:800px"></img>
+    <div class="col-sm-12 text-center">
+      <img src="https://github.com/MedARC-AI/fMRI-reconstruction-NSD/blob/main/docs/recon_grid.png?raw=true" style="width:800px"></img>
+    </div>
   </div>
 </div><br>
 
@@ -116,9 +118,6 @@
 </div><br>
 
 
-
-
-
   <div class="container bg-3">
   <div class="row">
     <h2 class="text-center" id="results">Results</h2>
@@ -145,8 +144,14 @@
       <div class="row">
         <h2 class="text-center">Acknowledgements</h2>
         <hr>
-        <p>Thanks to Jeremy Howard for reviewing the manuscript and providing feedback. Thanks to Stability AI for providing the computational resources needed for this research.
-            This webpage template was recycled from <a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/">here</a>. </p>
+        <p>Thanks to the MedARC community, including Jeremy Howard, Tommaso Furlanello, Mihir Tripathy, and Cesar Torrico for useful discussion and reviewing the manuscript. 
+          Thank you to Furkan Ozcelik, author of <a href="https://arxiv.org/abs/2303.05334">Brain-Diffuser</a>, for sharing his code and expert knowledge with our group. 
+          We thank <a href="https://laion.ai">LAION</az> for being the initial community where this project developed, and thank Romain Beaumont and Zion English for useful 
+          discussion during that time. We thank <a href="https://stability.ai">Stability AI</a> for sharing their high-performance computing workplace and giving us the 
+          computational resources necessary to develop MindEye. Thank you to Richard Vencu for help navigating the Stability HPC. Collection of the Natural Scenes Dataset 
+          was supported by NSF IIS-1822683 and NSF IIS-1822929. This webpage template was recycled from 
+          <a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/">here</a>. 
+        </p>
       </div>
     </div><br><br>
 

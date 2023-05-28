@@ -56,6 +56,8 @@
       Jimmie Goode<sup>†2</sup>, Stepan Shabalin<sup>2</sup>, Alex Nguyen<sup>1</sup>, Ethan Cohen<sup>3</sup>, Aidan J. Dempster<sup>4</sup>, Nathalie Verlinde<sup>1</sup>, 
       Elad Yundler<sup>5</sup>, David Weisberg<sup>1,2</sup>, <a href="https://pni.princeton.edu/faculty/kenneth-norman">Kenneth A. Norman</a><sup>§1</sup>, 
       and <a href="https://tanishq.ai">Tanishq M. Abraham</a><sup>§2,6,7</sup> 
+      <br>
+      <br>
       <br><sup>1</sup><a href="https://pni.princeton.edu">Princeton Neuroscience Institute</a>, <sup>2</sup><a href="https://medarc.ai">Medical AI Research Center (MedARC)</a>, 
       <sup>3</sup>Ecole Normale Supérieure, PSL University, <sup>4</sup>University of Toronto, <sup>5</sup>Hebrew University of Jerusalem, 
       <sup>6</sup><a href="https://eleuther.ai">EleutherAI</a>, <sup>7</sup><a href="https://stability.ai">Stability AI</a> 
@@ -76,7 +78,7 @@
     <div class="col-sm-2">
       <a href="#results"><img height="100" width="130" src="website_files/imgs/website_teaser.png" data-nothumb="" style="border: 1px solid"><br>Results</a>
     </div>
-
+    <div class="col-sm-2 col-sm-offset-1"></div>
   </div>
 </div><br>
 
@@ -123,20 +125,36 @@
     <h2 class="text-center" id="results">Results</h2>
     <hr>
      <p>
-       <b>Image/Brain Retrieval</b> Blah blah blah.
+       <b>Image/Brain Retrieval</b> Image retrieval evaluations reveal the level of fine-grained image-specific information contained in the predicted brain embeddings. For example, 
+       if the model is given a dozen pictures of zebras and the brain sample corresponding to viewing one of those zebras, can the model correctly find the corresponding zebra? 
+       If the model can correctly deduce that the brain sample corresponds to an image of a zebra but cannot deduce the specific image amongst various candidates, this would suggest
+       that category-level information but not exemplar-specific information is preserved in the CLIP fMRI embedding. MindEye not only succeeds in this zebra example but also 
+       demonstrates 93.2% overall accuracy for Subject 1 in finding the exact original image within the 982 test images.
      </p>
+    <p>
+      We can scale up image retrieval using a pool of billions of image candidates. Below, we show results querying the LAION-5B dataset using our CLIP fMRI embeddings. The final layer
+      CLIP ViT-L/14 embeddings for all 5 billion images are available at <a href="https://knn.laion.ai">knn.laion.ai</a>, and can be queried for K-nearest neighbor lookup via the 
+      CLIP Retrieval client. For each test sample, we first retrieve 16 candidate images using this method (using a variant of MindEye that maps voxels to the final layer of CLIP). 
+      The best image is then selected based on having the highest CLIP embedding cosine similarity to the CLIP fMRI embedding. This image retrieval approach is especially well-suited for 
+      tasks involving fine-grained classification, and can be used as an alternative to image reconstruction without a generative model.
     <div class="col-sm-12 text-center">
-      <!-- <img src="website_files/imgs/glide.png" class="img-fluid" alt="glide" style="width:88%"> -->
+      <img src="https://github.com/MedARC-AI/fMRI-reconstruction-NSD/blob/main/docs/retrieval.png?raw=true" class="img-fluid" alt="glide" style="width:88%">
     </div>
   </div>
 
     <div class="row">
       <hr>
       <p>
-       <b>fMRI-to-Image Reconstruction</b> Blah blah blah.
+       <b>fMRI-to-Image Reconstruction</b> The diffusion prior outputs from MindEye are aligned CLIP fMRI embeddings that can be used with any pretrained image generation model 
+        that accepts latents from CLIP image space. We evaluated the outputs of MindEye reconstructions across several models including Versatile Diffusion, Stable Diffusion 
+        (Image Variations) and Lafite. Here we show results from Versatile Diffusion since it yielded the best results. For each subject, for each test brain sample, we output 
+        16 CLIP image embeddings from MindEye and feed these embeddings through the image variations pipeline of Versatile Diffusion. This produces 16 image reconstructions 
+        per brain sample. For our reconstructions we use 20 denoising timesteps with UniPCMultistep noise scheduling and start the denoising process from the noised output of our
+        low-level pipeline (img2img). We then select the best of 16 reconstructions by computing last hidden layer CLIP embeddings and picking the image with the highest cosine 
+        similarity to the disjointed CLIP fMRI embedding. We qualitatively compare our reconstructions side-by-side with outputs from other fMRI-to-image reconstruction models below.
       </p>
       <div class="col-sm-12 text-center">
-        <!-- <img src="website_files/imgs/clevr_object.png" class="img-fluid" alt="clevr_objects" style="width:100%; height:100%"> -->
+        <img src="https://github.com/MedARC-AI/fMRI-reconstruction-NSD/blob/main/docs/recon_comparison.png?raw=true" class="img-fluid" alt="clevr_objects" style="width:100%; height:100%">
       </div>
     </div>
 
@@ -146,7 +164,7 @@
         <hr>
         <p>Thanks to the MedARC community, including Jeremy Howard, Tommaso Furlanello, Mihir Tripathy, and Cesar Torrico for useful discussion and reviewing the manuscript. 
           Thank you to Furkan Ozcelik, author of <a href="https://arxiv.org/abs/2303.05334">Brain-Diffuser</a>, for sharing his code and expert knowledge with our group. 
-          We thank <a href="https://laion.ai">LAION</az> for being the initial community where this project developed, and thank Romain Beaumont and Zion English for useful 
+          We thank <a href="https://laion.ai">LAION</a> for being the initial community where this project developed, and thank Romain Beaumont and Zion English for useful 
           discussion during that time. We thank <a href="https://stability.ai">Stability AI</a> for sharing their high-performance computing workplace and giving us the 
           computational resources necessary to develop MindEye. Thank you to Richard Vencu for help navigating the Stability HPC. Collection of the Natural Scenes Dataset 
           was supported by NSF IIS-1822683 and NSF IIS-1822929. This webpage template was recycled from 

@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M09001M6S2"></script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-L64K6S2GBM"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', 'G-M09001M6S2');
+  gtag('config', 'G-L64K6S2GBM');
 </script>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="description" content="Reconstructing the Mind's Eye: fMRI-to-Image with Contrastive Learning and Diffusion Priors">
@@ -85,7 +85,7 @@
     <hr>
     <p> We present MindEye, a novel fMRI-to-image approach to retrieve and reconstruct viewed images from brain activity. Our model comprises two parallel submodules that are specialized for retrieval (using contrastive learning) and reconstruction (using a diffusion prior). MindEye can map fMRI brain activity to any high dimensional multimodal latent space, like CLIP image space, enabling image reconstruction using generative models that accept embeddings from this latent space. We comprehensively compare our approach with other existing methods, using both qualitative side-by-side comparisons and quantitative evaluations, and show that MindEye achieves state-of-the-art performance in both reconstruction and retrieval tasks. In particular, MindEye can retrieve the exact original image even among highly similar candidates indicating that its brain embeddings retain fine-grained image-specific information. This allows us to accurately retrieve images even from large-scale databases like LAION-5B. We demonstrate through ablations that MindEye's performance improvements over previous methods result from specialized submodules for retrieval and reconstruction, improved training techniques, and training models with orders of magnitude more parameters. Furthermore, we show that MindEye can better preserve low-level image features in the reconstructions by using img2img, with outputs from a separate autoencoder. </p>
     <div class="col-sm-12 text-center">
-      <img src="website_files/imgs/recon_grid.png" style="width:800px"></img>
+      <img src="website_files/imgs/recon_grid.png" class="img-fluid" alt="glide" style="width:88%">
     </div>
   </div>
 </div><br>
@@ -110,7 +110,7 @@
       such that we start the diffusion process from the noised encodings of our blurry reconstructions rather than pure noise.
     </p>
     <div class="col-sm-12 text-center">
-      <img src="website_files/imgs/pipeline.png" style="width:800px"></img>
+      <img src="website_files/imgs/pipeline.png" class="img-fluid" alt="glide" style="width:88%">
     </div>
   </div>
 </div><br>
@@ -159,13 +159,13 @@
   <div class="row">
     <h2 class="text-center">Acknowledgements</h2>
     <hr>
-    <p>Thanks to the MedARC community, including Jeremy Howard, Tommaso Furlanello, Mihir Tripathy, and Cesar Torrico for useful discussion and reviewing the manuscript. 
-      Thank you to Furkan Ozcelik, author of <a href="https://arxiv.org/abs/2303.05334">Brain-Diffuser</a>, for sharing his code and expert knowledge with our group. 
-      We thank <a href="https://laion.ai">LAION</a> for being the initial community where this project developed, and thank Romain Beaumont and Zion English for useful 
-      discussion during that time. We thank <a href="https://stability.ai">Stability AI</a> for sharing their high-performance computing workplace and giving us the 
-      computational resources necessary to develop MindEye. Thank you to Richard Vencu for help navigating the Stability HPC. Collection of the Natural Scenes Dataset 
-      was supported by NSF IIS-1822683 and NSF IIS-1822929. This webpage template was recycled from 
-      <a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/">here</a>. 
+    <p>Thanks to the MedARC community, including <a href="https://jeremy.fast.ai">Jeremy Howard</a>, <a href="https://scholar.google.com/citations?user=sYixPw8AAAAJ&hl=en">
+      Tommaso Furlanello</a>, Mihir Tripathy, and Cesar Torrico for useful discussion and reviewing the manuscript. Thank you to Furkan Ozcelik, author of 
+      <a href="https://arxiv.org/abs/2303.05334">Brain-Diffuser</a>, for sharing his code and expert knowledge with our group. We thank <a href="https://laion.ai">LAION</a> 
+      for being the initial community where this project developed, and thank Romain Beaumont and Zion English for useful discussion during that time. We thank 
+      <a href="https://stability.ai">Stability AI</a> for sharing their high-performance computing workplace and giving us the computational resources necessary to develop MindEye. 
+      Thank you to Richard Vencu for help navigating the Stability HPC. Collection of the Natural Scenes Dataset was supported by NSF IIS-1822683 and NSF IIS-1822929. This webpage 
+      template was recycled from <a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/">here</a>. 
     </p>
   </div>
 </div><br><br>
@@ -194,22 +194,6 @@
     </div>
   </div>
 </div><br><br>
-
-<!-- <div class="container bg-3">    
-  <div class="row text-center">
-    <div class="col-sm-2"></div>
-    <div class="col-sm-2 col-sm-offset-1">
-      <a href="#"><img height="100" width="78" src="website_files/imgs/paper_page.png" data-nothumb="" style="border: 1px solid"><br>arXiv<br>Preprint<br></a>
-    </div>
-    <div class="col-sm-2">
-      <a href="https://github.com/MedARC-AI/fMRI-reconstruction-NSD"><img height="100" width="78" src="website_files/imgs/source_code.png" data-nothumb="" style="border: 1px solid"><br>Source Code<br>Github</a>
-    </div>
-    <div class="col-sm-2">
-      <a href="#results"><img height="100" width="78" src="website_files/imgs/website_teaser.png" data-nothumb="" style="border: 1px solid"><br>Results</a>
-    </div>
-    <div class="col-sm-2 col-sm-offset-1"></div>
-  </div>
-</div><br> -->
 
 
 </body>

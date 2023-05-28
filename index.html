@@ -11,9 +11,9 @@
   gtag('config', 'G-M09001M6S2');
 </script>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="description" content="Compositional Visual Generation with Composable Diffusion Models">
-  <meta name="keywords" content="EBM,Diffusion,GenerativeModels">
-  <title>Compositional Visual Generation with Composable Diffusion Models</title>
+  <meta name="description" content="Reconstructing the Mind's Eye: fMRI-to-Image with Contrastive Learning and Diffusion Priors">
+  <meta name="keywords" content="fMRI,Diffusion,Contrastive">
+  <title>Reconstructing the Mind's Eye: fMRI-to-Image with Contrastive Learning and Diffusion Priors</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="website_files/bootstrap.css">
@@ -47,24 +47,26 @@
 </head>
 <body>
 
-<div class="jumbotron">
-  <div class="container text-center">
-    <h1 style="color:white;margin-bottom:0;">Reconstructing the Mind's Eye:</h1>
-    <h3 style="color:white;margin-top:0;">fMRI-to-Image with Contrastive Learning and Diffusion Priors</h3>
-    <br>
-    <p style="color:white"><a href="https://nanliu.io/">Nan Liu</a><sup>1*</sup>, <a href="https://people.csail.mit.edu/lishuang/">Shuang Li</a><sup>2*</sup>,
-      <a href="https://yilundu.github.io">Yilun Du</a><sup>2*</sup>, <a href="https://groups.csail.mit.edu/vision/torralbalab/">Antonio Torralba</a><sup>2</sup>,
-      <a href="https://mitibmwatsonailab.mit.edu/people/joshua-tenenbaum/">Joshua B. Tenenbaum</a><sup>2</sup>
-      <br><sup>1</sup>UIUC, <sup>2</sup>MIT
-      <br>
-      <a>(* indicate equal contribution)</a>
-    <br>
-  </div>
+<div class=“jumbotron”> 
+  <div class=“container text-center”> 
+    <h1 style=“color:white;margin-bottom:0;”>Reconstructing the Mind’s Eye:</h1> 
+    <h3 style=“color:white;margin-top:0;”>fMRI-to-Image with Contrastive Learning and Diffusion Priors</h3> 
+    <br> 
+    <p style=“color:white”><a href=“https://www.paulscotti.com”>Paul S. Scotti</a><sup>1*,2*</sup>, <a href=“https://atmadeep.bss.design”>Atmadeep Banerjee</a><sup>2*</sup>, 
+      Jimmie Goode<sup>†2</sup>, Stepan Shabalin<sup>2</sup>, Alex Nguyen<sup>1</sup>, Ethan Cohen<sup>3</sup>, Aidan J. Dempster<sup>4</sup>, Nathalie Verlinde<sup>1</sup>, 
+      Elad Yundler<sup>5</sup>, David Weisberg<sup>1,2</sup>, <a href=“https://pni.princeton.edu/faculty/kenneth-norman”>Kenneth A. Norman</a><sup>§1</sup>, 
+      and <a href=“https://tanishq.ai”>Tanishq M. Abraham</a><sup>§2,6,7</sup> 
+      <br><sup>1</sup><a href=“https://pni.princeton.edu”>Princeton Neuroscience Institute</a>, <sup>2</sup><a href=“https://medarc.ai”>Medical AI Research Center (MedARC)</a>, 
+      <sup>3</sup>Ecole Normale Supérieure, PSL University, <sup>4</sup>University of Toronto, <sup>5</sup>Hebrew University of Jerusalem, 
+      <sup>6</sup><a href=“https://eleuther.ai”>EleutherAI</a>, <sup>7</sup><a href=“https://stability.ai”>Stability AI</a> 
+      <br> <a>(* indicate equal contribution)</a> 
+      <br> 
+  </div> 
 </div>
   
 <div class="container bg-3">    
   <div class="row text-center">
-    
+    <div class="col-sm-2 col-sm-offset-1"></div>
     <div class="col-sm-2 col-sm-offset-1">
       <a href="https://arxiv.org/abs/2206.01714"><img height="100" width="78" src="website_files/imgs/paper_page.png" data-nothumb="" style="border: 1px solid"><br>arXiv<br>Preprint<br></a>
     </div>
@@ -84,9 +86,7 @@
     <h2 class="text-center">Abstract</h2>
     <hr>
     <p> We present MindEye, a novel fMRI-to-image approach to retrieve and reconstruct viewed images from brain activity. Our model comprises two parallel submodules that are specialized for retrieval (using contrastive learning) and reconstruction (using a diffusion prior). MindEye can map fMRI brain activity to any high dimensional multimodal latent space, like CLIP image space, enabling image reconstruction using generative models that accept embeddings from this latent space. We comprehensively compare our approach with other existing methods, using both qualitative side-by-side comparisons and quantitative evaluations, and show that MindEye achieves state-of-the-art performance in both reconstruction and retrieval tasks. In particular, MindEye can retrieve the exact original image even among highly similar candidates indicating that its brain embeddings retain fine-grained image-specific information. This allows us to accurately retrieve images even from large-scale databases like LAION-5B. We demonstrate through ablations that MindEye's performance improvements over previous methods result from specialized submodules for retrieval and reconstruction, improved training techniques, and training models with orders of magnitude more parameters. Furthermore, we show that MindEye can better preserve low-level image features in the reconstructions by using img2img, with outputs from a separate autoencoder. </p>
-    <div class="col-sm-12 text-center">
-      <img src="https://raw.githubusercontent.com/MedARC-AI/fMRI-reconstruction-NSD/streamline/docs/pipeline.png" style="width:800px"></img>
-    </div>
+    <img src="https://github.com/MedARC-AI/fMRI-reconstruction-NSD/blob/main/docs/recon_grid.png?raw=true" style="width:800px"></img>
   </div>
 </div><br>
 
@@ -98,8 +98,20 @@
   <div class="row">
     <h2 class="text-center">Methods</h2>
     <hr>
-    <p><b>High-Level (Semantic) Pipeline </b> Contrastive learning and diffusion prior stuff</p>
-    <p><b>Low-Level (Perceptual) Pipeline </b> The low-level pipeline maps voxels to the embedding space of Stable Diffusion’s VAE. The output of this pipeline can be fed to the VAE decoder to produce blurry image reconstructions that lack high-level semantic content but perform well on low-level image metrics. We use [img2img](https://arxiv.org/abs/2108.01073) to improve our final image reconstructions in terms of low-level metrics, with minimal impairment to high-level metrics, such that we start the diffusion process from the noised encodings of our blurr reconstructions rather than pure noise.</p>  
+    <p><b>High-Level (Semantic) Pipeline </b> The high-level pipeline is the core of MindEye as it maps voxels to CLIP image space to be fed through pretrained image generation models.
+    The MLP backbone for our high-level pipeline maps flattened voxels to an intermediate space of size 257 × 768, corresponding to the last hidden layer of CLIP ViT/L-14. The backbone 
+    consists of a linear layer followed by 4 residual blocks and a final linear projector. The embeddings from the backbone are fed to an MLP projector and a diffusion prior in parallel. 
+    The whole model is trained end-to-end with the prior getting an MSE loss and the projector getting a bidirectional CLIP loss. The projector outputs can be used for retrieval tasks 
+    and the diffusion prior outputs can be used by generative models to reconstruct images.
+    </p>
+    <p><b>Low-Level (Perceptual) Pipeline </b> The low-level pipeline maps voxels to the embedding space of Stable Diffusion’s VAE. 
+      The output of this pipeline can be fed to the VAE decoder to produce blurry image reconstructions that lack high-level semantic content but perform well on low-level image metrics. 
+      We use <a href="https://arxiv.org/abs/2108.01073">img2img</a> to improve our final image reconstructions in terms of low-level metrics, with minimal impairment to high-level metrics, 
+      such that we start the diffusion process from the noised encodings of our blurry reconstructions rather than pure noise.
+    </p>
+    <div class="col-sm-12 text-center">
+      <img src="https://github.com/MedARC-AI/fMRI-reconstruction-NSD/blob/main/docs/pipeline.png?raw=true" style="width:800px"></img>
+    </div>
   </div>
 </div><br>
 

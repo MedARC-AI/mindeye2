@@ -31,6 +31,12 @@
       background-color: #f2f2f2;
       padding: 25px;
     }
+    .long-image{
+        width: 100%;
+        height: 1000px;
+        overflow: auto;
+        margin: auto;
+      }
   </style>
   <link rel="stylesheet" href="website_files/font.css">
   <link rel="stylesheet" href="website_files/main.css">
@@ -42,16 +48,16 @@
     <h1 style="color:white;margin-bottom:0;">Reconstructing the Mind’s Eye:</h1> 
     <h3 style="color:white;margin-top:0;">fMRI-to-Image with Contrastive Learning and Diffusion Priors</h3> 
     <br> 
-    <p style="color:white"><a href="https://www.paulscotti.com">Paul S. Scotti</a><sup>1*,2*</sup>, <a href="https://atmadeep.bss.design">Atmadeep Banerjee</a><sup>2*</sup>, 
-      Jimmie Goode<sup>†2</sup>, Stepan Shabalin<sup>2</sup>, Alex Nguyen<sup>1</sup>, Ethan Cohen<sup>3</sup>, Aidan J. Dempster<sup>4</sup>, Nathalie Verlinde<sup>1</sup>, 
-      Elad Yundler<sup>5</sup>, David Weisberg<sup>1,2</sup>, <a href="https://pni.princeton.edu/faculty/kenneth-norman">Kenneth A. Norman</a><sup>§1</sup>, 
-      and <a href="https://tanishq.ai">Tanishq M. Abraham</a><sup>§2,6,7</sup> 
+    <p style="color:white"><a href="https://paulscotti.github.io">Paul S. Scotti</a><sup>1,2*</sup>, <a href="https://atom-101.github.io">Atmadeep Banerjee</a><sup>2*</sup>, 
+      Jimmie Goode<sup>†2</sup>, Stepan Shabalin<sup>2</sup>, Alex Nguyen<sup>1</sup>, <a href="https://ethancohen123.github.io">Ethan Cohen</a><sup>3</sup>, <a href="https://aidandevelops.com">Aidan J. Dempster</a><sup>4</sup>, Nathalie Verlinde<sup>1</sup>, 
+      Elad Yundler<sup>5</sup>, David Weisberg<sup>1,2</sup>, <a href="https://compmem.princeton.edu">Kenneth A. Norman</a><sup>‡1</sup>, 
+      and <a href="https://tanishq.ai">Tanishq M. Abraham</a><sup>‡2,6,7</sup> 
       <br>
       <br>
       <br><sup>1</sup><a href="https://pni.princeton.edu">Princeton Neuroscience Institute</a>, <sup>2</sup><a href="https://medarc.ai">Medical AI Research Center (MedARC)</a>, 
       <sup>3</sup>Ecole Normale Supérieure, PSL University, <sup>4</sup>University of Toronto, <sup>5</sup>Hebrew University of Jerusalem, 
       <sup>6</sup><a href="https://eleuther.ai">EleutherAI</a>, <sup>7</sup><a href="https://stability.ai">Stability AI</a> 
-      <br> (* indicate equal contribution)
+      <br> (* indicate equal contribution, † indicates core contribution, ‡ indicates joint senior authors)
       <br> 
   </div> 
 </div>
@@ -66,7 +72,7 @@
       <a href="https://github.com/MedARC-AI/fMRI-reconstruction-NSD"><img height="100" width="78" src="website_files/imgs/source_code.png" data-nothumb="" style="border: 1px solid"><br>Source Code<br>Github</a>
     </div>
     <div class="col-sm-2">
-      <a href="#results"><img height="100" width="130" src="website_files/imgs/website_teaser.png" data-nothumb="" style="border: 1px solid"><br>Results</a>
+      <a href="#results"><img height="100" width="78" src="website_files/imgs/website_teaser.png" data-nothumb="" style="border: 1px solid"><br>Results</a>
     </div>
     <div class="col-sm-2 col-sm-offset-1"></div>
   </div>
@@ -79,7 +85,7 @@
     <hr>
     <p> We present MindEye, a novel fMRI-to-image approach to retrieve and reconstruct viewed images from brain activity. Our model comprises two parallel submodules that are specialized for retrieval (using contrastive learning) and reconstruction (using a diffusion prior). MindEye can map fMRI brain activity to any high dimensional multimodal latent space, like CLIP image space, enabling image reconstruction using generative models that accept embeddings from this latent space. We comprehensively compare our approach with other existing methods, using both qualitative side-by-side comparisons and quantitative evaluations, and show that MindEye achieves state-of-the-art performance in both reconstruction and retrieval tasks. In particular, MindEye can retrieve the exact original image even among highly similar candidates indicating that its brain embeddings retain fine-grained image-specific information. This allows us to accurately retrieve images even from large-scale databases like LAION-5B. We demonstrate through ablations that MindEye's performance improvements over previous methods result from specialized submodules for retrieval and reconstruction, improved training techniques, and training models with orders of magnitude more parameters. Furthermore, we show that MindEye can better preserve low-level image features in the reconstructions by using img2img, with outputs from a separate autoencoder. </p>
     <div class="col-sm-12 text-center">
-      <img src="https://github.com/MedARC-AI/fMRI-reconstruction-NSD/blob/main/docs/recon_grid.png?raw=true" style="width:800px"></img>
+      <img src="website_files/imgs/recon_grid.png" style="width:800px"></img>
     </div>
   </div>
 </div><br>
@@ -104,13 +110,13 @@
       such that we start the diffusion process from the noised encodings of our blurry reconstructions rather than pure noise.
     </p>
     <div class="col-sm-12 text-center">
-      <img src="https://github.com/MedARC-AI/fMRI-reconstruction-NSD/blob/main/docs/pipeline.png?raw=true" style="width:800px"></img>
+      <img src="website_files/imgs/pipeline.png" style="width:800px"></img>
     </div>
   </div>
 </div><br>
 
 
-  <div class="container bg-3">
+<div class="container bg-3">
   <div class="row">
     <h2 class="text-center" id="results">Results</h2>
     <hr>
@@ -128,43 +134,82 @@
       The best image is then selected based on having the highest CLIP embedding cosine similarity to the CLIP fMRI embedding. This image retrieval approach is especially well-suited for 
       tasks involving fine-grained classification, and can be used as an alternative to image reconstruction without a generative model.
     <div class="col-sm-12 text-center">
-      <img src="https://github.com/MedARC-AI/fMRI-reconstruction-NSD/blob/main/docs/retrieval.png?raw=true" class="img-fluid" alt="glide" style="width:88%">
+      <img src="website_files/imgs/retrieval.png" class="img-fluid" alt="glide" style="width:88%">
     </div>
   </div>
 
-    <div class="row">
-      <hr>
-      <p>
-       <b>fMRI-to-Image Reconstruction</b> The diffusion prior outputs from MindEye are aligned CLIP fMRI embeddings that can be used with any pretrained image generation model 
-        that accepts latents from CLIP image space. We evaluated the outputs of MindEye reconstructions across several models including Versatile Diffusion, Stable Diffusion 
-        (Image Variations) and Lafite. Here we show results from Versatile Diffusion since it yielded the best results. For each subject, for each test brain sample, we output 
-        16 CLIP image embeddings from MindEye and feed these embeddings through the image variations pipeline of Versatile Diffusion. This produces 16 image reconstructions 
-        per brain sample. For our reconstructions we use 20 denoising timesteps with UniPCMultistep noise scheduling and start the denoising process from the noised output of our
-        low-level pipeline (img2img). We then select the best of 16 reconstructions by computing last hidden layer CLIP embeddings and picking the image with the highest cosine 
-        similarity to the disjointed CLIP fMRI embedding. We qualitatively compare our reconstructions side-by-side with outputs from other fMRI-to-image reconstruction models below.
-      </p>
-      <div class="col-sm-12 text-center">
-        <img src="https://github.com/MedARC-AI/fMRI-reconstruction-NSD/blob/main/docs/recon_comparison.png?raw=true" class="img-fluid" alt="clevr_objects" style="width:100%; height:100%">
-      </div>
+  <div class="row">
+    <hr>
+    <p>
+      <b>fMRI-to-Image Reconstruction</b> The diffusion prior outputs from MindEye are aligned CLIP fMRI embeddings that can be used with any pretrained image generation model 
+      that accepts latents from CLIP image space. We evaluated the outputs of MindEye reconstructions across several models including Versatile Diffusion, Stable Diffusion 
+      (Image Variations) and Lafite. Here we show results from Versatile Diffusion since it yielded the best results. For each subject, for each test brain sample, we output 
+      16 CLIP image embeddings from MindEye and feed these embeddings through the image variations pipeline of Versatile Diffusion. This produces 16 image reconstructions 
+      per brain sample. For our reconstructions we use 20 denoising timesteps with UniPCMultistep noise scheduling and start the denoising process from the noised output of our
+      low-level pipeline (img2img). We then select the best of 16 reconstructions by computing last hidden layer CLIP embeddings and picking the image with the highest cosine 
+      similarity to the disjointed CLIP fMRI embedding. We qualitatively compare our reconstructions side-by-side with outputs from other fMRI-to-image reconstruction models below.
+    </p>
+    <div class="col-sm-12 text-center">
+      <img src="website_files/imgs/recon_comparison.png" class="img-fluid" alt="clevr_objects" style="width:100%; height:100%">
     </div>
+  </div>
+</div><br><br>
 
-    <div class="container bg-3">
-      <div class="row">
-        <h2 class="text-center">Acknowledgements</h2>
-        <hr>
-        <p>Thanks to the MedARC community, including Jeremy Howard, Tommaso Furlanello, Mihir Tripathy, and Cesar Torrico for useful discussion and reviewing the manuscript. 
-          Thank you to Furkan Ozcelik, author of <a href="https://arxiv.org/abs/2303.05334">Brain-Diffuser</a>, for sharing his code and expert knowledge with our group. 
-          We thank <a href="https://laion.ai">LAION</a> for being the initial community where this project developed, and thank Romain Beaumont and Zion English for useful 
-          discussion during that time. We thank <a href="https://stability.ai">Stability AI</a> for sharing their high-performance computing workplace and giving us the 
-          computational resources necessary to develop MindEye. Thank you to Richard Vencu for help navigating the Stability HPC. Collection of the Natural Scenes Dataset 
-          was supported by NSF IIS-1822683 and NSF IIS-1822929. This webpage template was recycled from 
-          <a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/">here</a>. 
-        </p>
+<div class="container bg-3">
+  <div class="row">
+    <h2 class="text-center">Acknowledgements</h2>
+    <hr>
+    <p>Thanks to the MedARC community, including Jeremy Howard, Tommaso Furlanello, Mihir Tripathy, and Cesar Torrico for useful discussion and reviewing the manuscript. 
+      Thank you to Furkan Ozcelik, author of <a href="https://arxiv.org/abs/2303.05334">Brain-Diffuser</a>, for sharing his code and expert knowledge with our group. 
+      We thank <a href="https://laion.ai">LAION</a> for being the initial community where this project developed, and thank Romain Beaumont and Zion English for useful 
+      discussion during that time. We thank <a href="https://stability.ai">Stability AI</a> for sharing their high-performance computing workplace and giving us the 
+      computational resources necessary to develop MindEye. Thank you to Richard Vencu for help navigating the Stability HPC. Collection of the Natural Scenes Dataset 
+      was supported by NSF IIS-1822683 and NSF IIS-1822929. This webpage template was recycled from 
+      <a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/">here</a>. 
+    </p>
+  </div>
+</div><br><br>
+
+<div class="container bg-3" style="background-color:lightgrey; border-radius:25px; padding-bottom: 25px;">
+  <div class="row">
+    <h2 class="text-center">All Results</h2>
+    <p style="margin:10px">We show all reconstructions and retrievals for subject 01. The results for the rest of the subjects are present in our github <a href="https://github.com/MedARC-AI/fMRI-reconstruction-NSD/tree/main/docs">repo</a></p>
+    <div class="col-sm-6">
+      <!-- <h3 class="text-center">All Reconstructions</h3>
+      <hr> -->
+      <div class="long-image text-center">
+        <img src="website_files/imgs/Subject01_982_Recons.png" style="width:100%" alt="myImage">
       </div>
-    </div><br><br>
+      <br>
+      <p class="text-center">Reconstructions for all 982 images for subject 01</p>
+    </div>
+    <div class="col-sm-6">
+      <!-- <h3 class="text-center">All Retrievals</h3>
+      <hr> -->
+      <div class="long-image text-center">
+        <img src="website_files/imgs/Subject01_982_Retrievals.png" style="width:100%" alt="myImage">
+      </div>
+      <br>
+      <p class="text-center">LAION-5B retrievals for all 982 images for subject 01</p>
+    </div>
+  </div>
+</div><br><br>
 
-
-</div>
+<!-- <div class="container bg-3">    
+  <div class="row text-center">
+    <div class="col-sm-2"></div>
+    <div class="col-sm-2 col-sm-offset-1">
+      <a href="#"><img height="100" width="78" src="website_files/imgs/paper_page.png" data-nothumb="" style="border: 1px solid"><br>arXiv<br>Preprint<br></a>
+    </div>
+    <div class="col-sm-2">
+      <a href="https://github.com/MedARC-AI/fMRI-reconstruction-NSD"><img height="100" width="78" src="website_files/imgs/source_code.png" data-nothumb="" style="border: 1px solid"><br>Source Code<br>Github</a>
+    </div>
+    <div class="col-sm-2">
+      <a href="#results"><img height="100" width="78" src="website_files/imgs/website_teaser.png" data-nothumb="" style="border: 1px solid"><br>Results</a>
+    </div>
+    <div class="col-sm-2 col-sm-offset-1"></div>
+  </div>
+</div><br> -->
 
 
 </body>

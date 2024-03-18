@@ -11,9 +11,9 @@
   gtag('config', 'G-L64K6S2GBM');
 </script>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <meta name="description" content="Reconstructing the Mind's Eye: fMRI-to-Image with Contrastive Learning and Diffusion Priors">
-  <meta name="keywords" content="fMRI,Diffusion,Contrastive">
-  <title>Reconstructing the Mind's Eye: fMRI-to-Image with Contrastive Learning and Diffusion Priors</title>
+  <meta name="description" content="MindEye2: Shared-Subject Models Enable fMRI-To-Image With 1 Hour of Data">
+  <meta name="keywords" content="fMRI,Stable Diffusion">
+  <title>MindEye2: Shared-Subject Models Enable fMRI-To-Image With 1 Hour of Data</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="website_files/bootstrap.css">
@@ -45,20 +45,18 @@
 
 <div class="jumbotron"> 
   <div class="container text-center"> 
-    <h1 style="color:white;margin-bottom:0;">Reconstructing the Mind’s Eye:</h1> 
-    <h3 style="color:white;margin-top:0;">fMRI-to-Image with Contrastive Learning and Diffusion Priors</h3> 
+    <h1 style="color:white;margin-bottom:0;">MindEye2:</h1> 
+    <h3 style="color:white;margin-top:0;">Shared-Subject Models Enable fMRI-To-Image With 1 Hour of Data</h3> 
     <br> 
-    <p style="color:white"><a href="https://paulscotti.github.io">Paul S. Scotti</a><sup>1,2*</sup>, <a href="https://atom-101.github.io">Atmadeep Banerjee</a><sup>2*</sup>, 
-      <a href="https://scholar.google.com/citations?user=qxgjXMYAAAAJ&hl=en">Jimmie Goode</a><sup>†2</sup>, <a href="https://neverix.github.io">Stepan Shabalin</a><sup>2</sup>, Alex Nguyen<sup>1</sup>, <a href="https://ethancohen123.github.io">Ethan Cohen</a><sup>3</sup>, <a href="https://aidandevelops.com">Aidan J. Dempster</a><sup>4</sup>, Nathalie Verlinde<sup>1</sup>, 
-      Elad Yundler<sup>5</sup>, David Weisberg<sup>1,2</sup>, <a href="https://compmem.princeton.edu">Kenneth A. Norman</a><sup>‡1</sup>, 
-      and <a href="https://tanishq.ai">Tanishq Mathew Abraham</a><sup>‡2,6,7</sup> 
-      <br>
-      <br>
-      <br><sup>1</sup><a href="https://pni.princeton.edu">Princeton Neuroscience Institute</a>, <sup>2</sup><a href="https://medarc.ai">Medical AI Research Center (MedARC)</a>, 
-      <sup>3</sup>Ecole Normale Supérieure, PSL University, <sup>4</sup>University of Toronto, <sup>5</sup>Hebrew University of Jerusalem, 
-      <sup>6</sup><a href="https://eleuther.ai">EleutherAI</a>, <sup>7</sup><a href="https://stability.ai">Stability AI</a> 
-      <br> (* indicate equal contribution, † indicates core contribution, ‡ indicates joint senior authors)
-      <br> 
+    <p style="color:white"><a href="https://paulscotti.github.io">Paul S. Scotti</a><sup>1,2*</sup>, Mihir Tripathy<sup>†2</sup>, Cesar Kadir Torrico Villanueva<sup>†2</sup>, Reese Kneeland<sup>†3</sup>, Tong Chen<sup>4,2</sup>,
+    Ashutosh Narang<sup>2</sup>, Charan Santhirasegaran<sup>2</sup>, Jonathan Xu<sup>5,2</sup>, Thomas Naselaris<sup>3</sup>, Kenneth A. Norman<sup>6</sup>,
+    <a href="https://tanishq.ai">Tanishq Mathew Abraham</a><sup>1,2</sup>
+    <br>
+    <br>
+    <br><sup>1</sup><a href="https://stability.ai">Stability AI</a>, <sup>2</sup><a href="https://medarc.ai">Medical AI Research Center (MedARC)</a>, 
+    <sup>3</sup>University of Minnesota, <sup>4</sup>The University of Sydney, <sup>5</sup>University of Waterloo, <sup>6</sup>Princeton Neuroscience Institute. Correspondence to: Paul Scotti <scottibrain@gmail.com>.
+    <br> (* indicate equal contribution, † indicates core contribution)
+    <br>
   </div> 
 </div>
   
@@ -66,10 +64,10 @@
   <div class="row text-center">
     <div class="col-sm-2"></div>
     <div class="col-sm-2 col-sm-offset-1">
-      <a href="https://arxiv.org/abs/2305.18274"><img height="100" width="78" src="website_files/imgs/paper_page.png" data-nothumb="" style="border: 1px solid"><br>arXiv<br>Preprint<br></a>
+      <a href="https://arxiv.org/"><img height="100" width="78" src="website_files/imgs/paper_page.png" data-nothumb="" style="border: 1px solid"><br>arXiv<br>Preprint<br></a>
     </div>
     <div class="col-sm-2">
-      <a href="https://github.com/MedARC-AI/fMRI-reconstruction-NSD"><img height="100" width="78" src="website_files/imgs/source_code.png" data-nothumb="" style="border: 1px solid"><br>Source Code<br>GitHub</a>
+      <a href="https://github.com/MedARC-AI/MindEyeV2"><img height="100" width="78" src="website_files/imgs/source_code.png" data-nothumb="" style="border: 1px solid"><br>Source Code<br>GitHub</a>
     </div>
     <div class="col-sm-2">
       <a href="#results"><img height="100" width="78" src="website_files/imgs/website_teaser.png" data-nothumb="" style="border: 1px solid"><br>Results</a>
@@ -78,18 +76,13 @@
   </div>
 </div><br>
 
-<div class="container bg-3">
-  <div class="row">
-    <p><b>Announcement</b>📢: We are excited to share MindEye has been accepted to NeurIPS 2023 as a <i>spotlight</i>! An updated camera-ready version of our manuscript is now up on arXiv. See you in New Orleans!</p>
-  </div>
-</div><br>
   
 
 <div class="container bg-3">
   <div class="row">
     <h2 class="text-center">Abstract</h2>
     <hr>
-    <p> We present MindEye, a novel fMRI-to-image approach to retrieve and reconstruct viewed images from brain activity. Our model comprises two parallel submodules that are specialized for retrieval (using contrastive learning) and reconstruction (using a diffusion prior). MindEye can map fMRI brain activity to any high dimensional multimodal latent space, like CLIP image space, enabling image reconstruction using generative models that accept embeddings from this latent space. We comprehensively compare our approach with other existing methods, using both qualitative side-by-side comparisons and quantitative evaluations, and show that MindEye achieves state-of-the-art performance in both reconstruction and retrieval tasks. In particular, MindEye can retrieve the exact original image even among highly similar candidates indicating that its brain embeddings retain fine-grained image-specific information. This allows us to accurately retrieve images even from large-scale databases like LAION-5B. We demonstrate through ablations that MindEye's performance improvements over previous methods result from specialized submodules for retrieval and reconstruction, improved training techniques, and training models with orders of magnitude more parameters. Furthermore, we show that MindEye can better preserve low-level image features in the reconstructions by using img2img, with outputs from a separate autoencoder. </p>
+    <p> Reconstructions of visual perception from brain activity have improved tremendously, but the practical utility of such methods has been limited. This is because such models are trained independently per subject where each subject requires dozens of hours of expensive fMRI training data to attain high-quality results. The present work showcases high-quality reconstructions using only 1 hour of fMRI training data. We pretrain our model across 7 subjects and then fine-tune on minimal data from a new subject. Our novel functional alignment procedure linearly maps all brain data to a shared-subject latent space, followed by a shared non-linear mapping to CLIP image space. We then map from CLIP space to pixel space by fine-tuning Stable Diffusion XL to accept CLIP latents as inputs instead of text. This approach improves out-of-subject generalization with limited training data and also attains state-of-the-art image retrieval and reconstruction metrics compared to single-subject approaches. MindEye2 demonstrates how accurate reconstructions of perception are possible from a single visit to the MRI facility. All code is available on GitHub. </p>
     <div class="col-sm-12 text-center">
       <img src="website_files/imgs/recon_grid.png" class="img-fluid" alt="glide" style="width:88%">
     </div>

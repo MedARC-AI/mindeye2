@@ -84,7 +84,7 @@
     <hr>
     <p> Reconstructions of visual perception from brain activity have improved tremendously, but the practical utility of such methods has been limited. This is because such models are trained independently per subject where each subject requires dozens of hours of expensive fMRI training data to attain high-quality results. The present work showcases high-quality reconstructions using only 1 hour of fMRI training data. We pretrain our model across 7 subjects and then fine-tune on minimal data from a new subject. Our novel functional alignment procedure linearly maps all brain data to a shared-subject latent space, followed by a shared non-linear mapping to CLIP image space. We then map from CLIP space to pixel space by fine-tuning Stable Diffusion XL to accept CLIP latents as inputs instead of text. This approach improves out-of-subject generalization with limited training data and also attains state-of-the-art image retrieval and reconstruction metrics compared to single-subject approaches. MindEye2 demonstrates how accurate reconstructions of perception are possible from a single visit to the MRI facility. All code is available on GitHub. </p>
     <div class="col-sm-12 text-center">
-      <img src="website_files/imgs/recon_grid.png" class="img-fluid" alt="glide" style="width:88%">
+      <img src="website_files/imgs/figure1.png" class="img-fluid" alt="glide" style="width:88%">
     </div>
   </div>
 </div><br>
@@ -153,39 +153,8 @@
   <div class="row">
     <h2 class="text-center">Acknowledgements</h2>
     <hr>
-    <p>Thanks to the MedARC community, including <a href="https://jeremy.fast.ai">Jeremy Howard</a>, <a href="https://scholar.google.com/citations?user=sYixPw8AAAAJ&hl=en">
-      Tommaso Furlanello</a>, Mihir Tripathy, and Cesar Torrico for useful discussion and reviewing the manuscript. Thank you to Furkan Ozcelik, author of 
-      <a href="https://arxiv.org/abs/2303.05334">Brain-Diffuser</a>, for sharing his code and expert knowledge with our group. We thank <a href="https://laion.ai">LAION</a> 
-      for being the initial community where this project developed, and thank Romain Beaumont and Zion English for useful discussion during that time. We thank 
-      <a href="https://stability.ai">Stability AI</a> for sharing their high-performance computing workplace and giving us the computational resources necessary to develop MindEye. 
-      Thank you to Richard Vencu for help navigating the Stability HPC. Collection of the Natural Scenes Dataset was supported by NSF IIS-1822683 and NSF IIS-1822929. This webpage 
-      template was recycled from <a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/">here</a>. 
+    <p> Special thanks to Dustin Podell, Vikram Voleti, Andreas Blattmann, and Robin Rombach for technical assistance fine-tuning Stable Diffusion XL to support our unCLIP usecase. Thanks to the MedARC Discord community for being the public forum from which this research was developed, particularly thank you to Connor Lane, Alex Nguyen, Atmadeep Bannerjee, Amir Refaee, and Mohammed Baharoon for their helpful discussions. Thanks to Alessandro Gifford and Connor Lane for providing useful feedback on drafts of the manuscript. Thank you to Richard Vencu for help navigating the Stability AI HPC. Thanks to Stability AI for their support for open neuroAI research and providing the computational resources necessary to develop MindEye2. Collection of the Natural Scenes Dataset was supported by NSF IIS-1822683 and NSF IIS-1822929. This webpage template was recycled from <a href="https://energy-based-model.github.io/Compositional-Visual-Generation-with-Composable-Diffusion-Models/">here</a>. 
     </p>
-  </div>
-</div><br><br>
-
-<div class="container bg-3" style="background-color:lightgrey; border-radius:25px; padding-bottom: 25px;">
-  <div class="row">
-    <h2 class="text-center">More Results</h2>
-    <p style="text-align:center">We show all reconstructions and retrievals for subject 01. The results for the rest of the subjects are present in our <a href="https://github.com/MedARC-AI/fMRI-reconstruction-NSD/tree/main/docs">GitHub repo</a></p>
-    <div class="col-sm-6">
-      <!-- <h3 class="text-center">All Reconstructions</h3>
-      <hr> -->
-      <div class="long-image text-center">
-        <img src="website_files/imgs/Subject01_982_Recons.png" style="width:100%" alt="myImage">
-      </div>
-      <br>
-      <p class="text-center">Reconstructions for all 982 images for subject 01</p>
-    </div>
-    <div class="col-sm-6">
-      <!-- <h3 class="text-center">All Retrievals</h3>
-      <hr> -->
-      <div class="long-image text-center">
-        <img src="website_files/imgs/Subject01_982_Retrievals.png" style="width:100%" alt="myImage">
-      </div>
-      <br>
-      <p class="text-center">LAION-5B retrievals for all 982 images for subject 01</p>
-    </div>
   </div>
 </div><br><br>
 
